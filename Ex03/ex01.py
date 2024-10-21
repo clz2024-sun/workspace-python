@@ -2,6 +2,7 @@
 import mysql.connector
 from mysql.connector import Error
 
+
 try:
     conn = mysql.connector.connect(
         host="localhost",
@@ -29,15 +30,16 @@ try:
 
 
     #4.결과처리
-    print(cursor.rowcount)
+    print(f"{cursor.rowcount}건 등록되었습니다.")
 
 except Error as e:
     print(f"데이터베이스 오류: {e}")
 
 finally:
+
     #5.자원정리
-    conn.close()
-    cursor.close()
+    if conn is not None:
+        conn.close()
 
-
-
+    if cursor is not None:
+        cursor.close()
