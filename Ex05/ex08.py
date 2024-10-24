@@ -54,11 +54,11 @@ while True:
         response = client.chat.completions.create(
             model="gpt-3.5-turbo-0125",
             messages=message_history,
-            temperature=0,         #엉뚱한 단어 
+            temperature=0.7,         #엉뚱한 단어 
             max_tokens=800,
             top_p=1,               #다양한문장형식 1~5형식 
-            frequency_penalty=0,   #중복단어 제한
-            presence_penalty=0,    #다른 주제까지 확장
+            frequency_penalty=0.5,   #중복단어 제한
+            presence_penalty=0.5,    #다른 주제까지 확장
             response_format={
                 "type": "text"
             }
