@@ -7,6 +7,8 @@ import sys
 from openai import OpenAI
 import chat_dao
 
+sys.stdout.reconfigure(encoding="utf-8")
+
 if len(sys.argv) > 1:
     question = sys.argv[1]
 
